@@ -117,7 +117,7 @@
 		//Check if the user won
 		if (currWrdLtrs.toString() == answerDisplay.toString()) {
 			wins++;
-			alert("CONTRATULATIONS! You guessed '" + currentWord + "' correctly. Try another round?")
+			alert("CONTRATULATIONS! You guessed '" + currentWord + "' correctly. Try another round?");
 			console.log("YOU WIN!");
 
 			// Update the wins in the HTML doc

@@ -117,6 +117,7 @@
 		//Check if the user won
 		if (currWrdLtrs.toString() == answerDisplay.toString()) {
 			wins++;
+			alert("CONTRATULATIONS! You guessed '" + currentWord + "' correctly. Try another round?")
 			console.log("YOU WIN!");
 
 			// Update the wins in the HTML doc
@@ -128,6 +129,7 @@
 
 		} else if (guessesLeft == 0) { //Check if user lost
 			losses++;
+			alert("OH NO! You have 0 guesses left, and all your friends are now in the upsidedown. The correct word was '" + currentWord + "'. Do you want to try again?")
 			console.log("You Lost!");
 
 			// Update the wins in the HTML doc

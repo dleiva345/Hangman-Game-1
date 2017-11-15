@@ -78,31 +78,41 @@
 	}
 
 	function checkLtrs(letter) {
-		//Check if the letter guessed is one of the letters in the word
-		var correctLetter = false;
-		for ( var i = 0; i < numBlanks; i++) {
-			if(currentWord[i] == letter) {
-				correctLetter = true;
-			}
-		}
 
-		//Check where the correct letter is located on the word, then add to html
-		if(correctLetter) {
-			for ( var i = 0; i < numBlanks; i++) {
-				if(currentWord[i] == letter) {
-					answerDisplay[i] = letter;
-				}
-			}
-		}
+		//Check if the letter pressed is an actual letter
+		if (event.keyCode >= 65 && event.keyCode <= 90) { //If the letter pressed IS part of the alphabet, then run the comparison:
 
-		//If the letter isn't part of the word
-		else {
-			wrongLtrs.push(letter);
-			guessesLeft--
-		}
+					//Check if the letter guessed is one of the letters in the word
+					var correctLetter = false;
 
-		//testing via console
-		console.log(answerDisplay);
+					for ( var i = 0; i < numBlanks; i++) {
+						if(currentWord[i] == letter) {
+							correctLetter = true;
+						}
+					}
+
+					//Check where the correct letter is located on the word, then add to html
+					if(correctLetter) {
+						for ( var i = 0; i < numBlanks; i++) {
+							if(currentWord[i] == letter) {
+								answerDisplay[i] = letter;
+							}
+						}
+					}
+
+					//If the letter isn't part of the word
+					else {
+						wrongLtrs.push(letter);
+						guessesLeft--
+					}
+
+					//testing via console
+					console.log(answerDisplay);
+					
+		} else { //If user input is not a letter from the alphabet
+			// Alert the user
+			alert("Please be sure to select a letter from the Alphabet (from a to z)");
+		}
 	}
 
 	function roundComplete() {
